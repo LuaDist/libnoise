@@ -1,0 +1,12 @@
+--- This file is part of LuaDist project
+
+name = "libnoise"
+version = "1.0.0"
+
+desc = "A portable, open-source, coherent noise-generating library for C++"
+author = "Jason Bevins"
+license = "LGPL"
+url = "http://libnoise.sourceforge.net/"
+maintainer = "Peter Kapec"
+
+source = "http://prdownloads.sourceforge.net/libnoise/libnoisesrc-1.0.0.zip?download"
