@@ -23,12 +23,14 @@ file( GLOB_RECURSE SRC "src/model/*.cpp" )
 file( GLOB_RECURSE SRC2 "src/module/*.cpp" )
 
 file( GLOB HEADERS "src/*.h" )
-set( HEADERS_MODEL "src/model" )
-set( HEADERS_MODULE "src/module" )
+file( GLOB HEADERS_MODEL "src/model/*.h" )
+file( GLOB HEADERS_MODULE "src/module/*.h" )
 
 add_library( noise  src/latlon.cpp src/noisegen.cpp ${SRC} ${SRC2})
 
 # Install
 install_library( noise )
-install_header( ${HEADERS} ${HEADERS_MODEL} ${HEADERS_MODULE} )
+install_header( ${HEADERS} INTO libnoise)
+install_header( ${HEADERS_MODEL} INTO libnoise/model )
+install_header( ${HEADERS_MODULE} INTO libnoise/module )
 install_doc( COPYING.txt doc/readme.txt doc/html doc/htmldata doc/img )
