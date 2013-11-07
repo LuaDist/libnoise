@@ -26,7 +26,7 @@ file( GLOB HEADERS "src/*.h" )
 file( GLOB HEADERS_MODEL "src/model/*.h" )
 file( GLOB HEADERS_MODULE "src/module/*.h" )
 
-add_library( noise  src/latlon.cpp src/noisegen.cpp ${SRC} ${SRC2})
+add_library( noise  src/latlon.cpp src/noisegen.cpp ${SRC} ${SRC2} ${DEF_FILE} ${DLL_RC_FILE})
 
 # Install
 install_library( noise )
