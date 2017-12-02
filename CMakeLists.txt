@@ -12,8 +12,8 @@ include( cmake/dist.cmake )
 if ( WIN32 AND NOT CYGWIN )
 	if( MSVC )
 		add_definitions( -D_CRT_SECURE_NO_DEPRECATE )
-		set( DEF_FILE src/win32/libnoise.def )
 		set( DLL_RC_FILE src/win32/noise.rc )
+		set( CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS TRUE )
 	endif()
 endif()
 
@@ -31,7 +31,7 @@ if( MSVC )
 	set( LIBRARY_NAME libnoise)
 endif()
 
-add_library( ${LIBRARY_NAME} src/latlon.cpp src/noisegen.cpp ${SRC_MODEL} ${SRC_MODULE} ${DEF_FILE} ${DLL_RC_FILE})
+add_library( ${LIBRARY_NAME} SHARED src/latlon.cpp src/noisegen.cpp ${SRC_MODEL} ${SRC_MODULE} ${DLL_RC_FILE})
 
 # Install
 install_library( ${LIBRARY_NAME} )
